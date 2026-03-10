@@ -31,7 +31,9 @@ jobs:
       - name: Setup kubeconfig
         run: |
           mkdir -p $HOME/.kube
-          echo "${{ secrets.KUBE_CONFIG }}" | base64 -d > $HOME/.kube/config
+          cat <<EOF > $HOME/.kube/config
+          ${{ secrets.KUBE_CONFIG }}
+          EOF
 
       - name: Deploy to Kubernetes
         run: |
