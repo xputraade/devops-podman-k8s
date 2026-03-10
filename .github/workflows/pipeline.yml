@@ -1,0 +1,26 @@
+name: DevOps CI Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Login Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKER_putraez }}
+          password: ${{ secrets.DOCKER_dckr_pat_XfltW3t9RTdX_cQO6w__oK6ZR9c }}
+
+      - name: Build Image
+        run: docker build -t putraez/myapp:v1 .
+
+      - name: Push Image
+        run: docker push putraez/myapp:v1
