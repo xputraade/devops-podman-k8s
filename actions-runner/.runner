@@ -1,0 +1,11 @@
+﻿{
+  "agentId": 21,
+  "agentName": "PUTRA",
+  "poolId": 1,
+  "poolName": "Default",
+  "serverUrl": "https://pipelinesghubeus23.actions.githubusercontent.com/JCDZN8MRS3cyblNAN0Ku5un8IWHaPMQ1Sd4ypAvigcQ064ektN/",
+  "gitHubUrl": "https://github.com/xputraade/devops-podman-k8s",
+  "workFolder": "_work",
+  "useV2Flow": true,
+  "serverUrlV2": "https://broker.actions.githubusercontent.com/"
+}

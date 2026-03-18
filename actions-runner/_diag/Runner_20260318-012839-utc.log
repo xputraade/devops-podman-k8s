@@ -1,0 +1,36 @@
+[2026-03-18 01:28:39Z INFO HostContext] No proxy settings were found based on environmental variables (http_proxy/https_proxy/HTTP_PROXY/HTTPS_PROXY)
+[2026-03-18 01:28:39Z INFO HostContext] Well known directory 'Bin': 'C:\Users\master\Documents\PODMAN\actions-runner\bin'
+[2026-03-18 01:28:39Z INFO HostContext] Well known directory 'Root': 'C:\Users\master\Documents\PODMAN\actions-runner'
+[2026-03-18 01:28:39Z INFO HostContext] Well known config file 'Credentials': 'C:\Users\master\Documents\PODMAN\actions-runner\.credentials'
+[2026-03-18 01:28:39Z INFO HostContext] Well known directory 'Bin': 'C:\Users\master\Documents\PODMAN\actions-runner\bin'
+[2026-03-18 01:28:39Z INFO HostContext] Well known directory 'Root': 'C:\Users\master\Documents\PODMAN\actions-runner'
+[2026-03-18 01:28:39Z INFO HostContext] Well known config file 'Runner': 'C:\Users\master\Documents\PODMAN\actions-runner\.runner'
+[2026-03-18 01:28:39Z INFO Listener] Runner is built for Windows (X64) - win-x64.
+[2026-03-18 01:28:39Z INFO Listener] RuntimeInformation: Microsoft Windows 10.0.19045.
+[2026-03-18 01:28:39Z INFO Listener] Version: 2.332.0
+[2026-03-18 01:28:39Z INFO Listener] Commit: a153d802ff96c51ac1b8d72dd8a38ebe830398fc
+[2026-03-18 01:28:39Z INFO Listener] Culture: en-US
+[2026-03-18 01:28:39Z INFO Listener] UI Culture: en-US
+[2026-03-18 01:28:39Z INFO HostContext] Well known directory 'Bin': 'C:\Users\master\Documents\PODMAN\actions-runner\bin'
+[2026-03-18 01:28:39Z INFO HostContext] Well known directory 'Root': 'C:\Users\master\Documents\PODMAN\actions-runner'
+[2026-03-18 01:28:39Z INFO Listener] Validating directory permissions for: 'C:\Users\master\Documents\PODMAN\actions-runner'
+[2026-03-18 01:28:39Z ERR  Terminal] WRITE ERROR: An error occurred: Permission to read the directory contents is required for 'C:\Users\master\Documents\PODMAN\actions-runner' and each directory up the hierarchy. Access to the path 'C:\Users\master\Documents\PODMAN' is denied.
+[2026-03-18 01:28:39Z ERR  Listener] System.UnauthorizedAccessException: Permission to read the directory contents is required for 'C:\Users\master\Documents\PODMAN\actions-runner' and each directory up the hierarchy. Access to the path 'C:\Users\master\Documents\PODMAN' is denied.
+ ---> System.UnauthorizedAccessException: Access to the path 'C:\Users\master\Documents\PODMAN' is denied.
+   at System.IO.Enumeration.FileSystemEnumerator`1.CreateDirectoryHandle(String path, Boolean ignoreNotFound)
+   at System.IO.Enumeration.FileSystemEnumerator`1.Init()
+   at System.IO.Enumeration.FileSystemEnumerable`1..ctor(String directory, FindTransform transform, EnumerationOptions options, Boolean isNormalized)
+   at System.IO.Enumeration.FileSystemEnumerableFactory.UserEntries(String directory, String expression, EnumerationOptions options)
+   at System.IO.Directory.InternalEnumeratePaths(String path, String searchPattern, SearchTarget searchTarget, EnumerationOptions options)
+   at GitHub.Runner.Sdk.IOUtil.ValidateExecutePermission(String directory)
+   --- End of inner exception stack trace ---
+   at GitHub.Runner.Sdk.IOUtil.ValidateExecutePermission(String directory)
+   at GitHub.Runner.Listener.Program.MainAsync(IHostContext context, String[] args)
+[2026-03-18 01:28:39Z ERR  Listener] #####################################################
+[2026-03-18 01:28:39Z ERR  Listener] System.UnauthorizedAccessException: Access to the path 'C:\Users\master\Documents\PODMAN' is denied.
+   at System.IO.Enumeration.FileSystemEnumerator`1.CreateDirectoryHandle(String path, Boolean ignoreNotFound)
+   at System.IO.Enumeration.FileSystemEnumerator`1.Init()
+   at System.IO.Enumeration.FileSystemEnumerable`1..ctor(String directory, FindTransform transform, EnumerationOptions options, Boolean isNormalized)
+   at System.IO.Enumeration.FileSystemEnumerableFactory.UserEntries(String directory, String expression, EnumerationOptions options)
+   at System.IO.Directory.InternalEnumeratePaths(String path, String searchPattern, SearchTarget searchTarget, EnumerationOptions options)
+   at GitHub.Runner.Sdk.IOUtil.ValidateExecutePermission(String directory)
