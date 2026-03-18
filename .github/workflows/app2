@@ -1,0 +1,41 @@
+name: App2 CI/CD (PowerShell)
+
+on:
+  push:
+    paths:
+      - 'app2/**'
+      - 'helm-chart-app2/**'
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      # 🔽 checkout repo
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # 🔧 set tag
+      - name: Set Tag
+        shell: pwsh
+        run: |
+          $tag = "${{ github.sha }}"
+          echo "TAG=$tag" >> $env:GITHUB_ENV
+
+      # 🔐 login docker
+      - name: Login Docker
+        shell: pwsh
+        run: |
+          docker login -u "${{ secrets.DOCKER_USERNAME }}" -p "${{ secrets.DOCKER_PASSWORD }}"
+
+      # 🐳 build image
+      - name: Build Image
+        shell: pwsh
+        run: |
+          docker build -t putraez/app2:$env:TAG ./app2
+
+      # 📦 push image
+      - name: Push Image
+        shell: pwsh
+        run: |
+          docker push putraez/app2:$env:TAG
